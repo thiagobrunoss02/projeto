@@ -16,8 +16,8 @@ class DashboardView(LoginRequiredMixin, View):
             user=request.user
         ).order_by('-id')[:10]
         context = {
-            'total_event': events.count(),
-            'running_events': running_events,
-            'latest_events': latest_events
+            'totais': events.count(),
+            'ativos': running_events,
+            'recentes': latest_events
         }
         return render(request, self.template_name, context)

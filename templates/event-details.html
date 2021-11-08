@@ -1,33 +1,33 @@
 {% extends 'base.html' %}
 
 {% block title %}
-Event Details
+Detalhes do Evento
 {% endblock %}
 
 {% block content %}
     <div class="container">
         <div class="clearfix">
-            <a class="btn btn-primary left" href="{% url 'calendarapp:calendar' %}"> Calendar </a>
-            <a class="btn btn-info right mr-2" href="{% url 'calendarapp:event_edit' event.pk %}"> Edit Event </a>
+            <a class="btn btn-primary left" href="{% url 'calendarapp:calendar' %}"> Calendário </a>
+            <a class="btn btn-info right mr-2" href="{% url 'calendarapp:event_edit' event.pk %}"> Editar Evento </a>
         </div>
         
         <div class="clearfix">
-            <h3>Event Name: {{ event.title }}</h3>
-            <p>From <span style="color: gray;">{{ event.start_time }}</span> To <span style="color: gray;">{{ event.end_time }}</span></p>
+            <h3>Nome: {{ event.title }}</h3>
+            <p>Data <span style="color: gray;">{{ event.start_time }}</span> To <span style="color: gray;">{{ event.end_time }}</span></p>
             <hr>
             <p>{{ event.description }}</p>
         </div>
         <hr>
         <div class="clearfix">
-            <h4 class="left" > Members of this Event</h4>
+            <h4 class="left" > Membros</h4>
             <a class="btn btn-success right" href="{% url 'calendarapp:add_eventmember' event.id %}"> Add Member </a>
         </div>
         <table class="table table-bordered">
             <thead>                  
                 <tr>
                   <th style="width: 10px">#</th>
-                  <th>Name</th>
-                  <th>Username</th>
+                  <th>Nome</th>
+                  <th>Usuário</th>
                   <th>Email</th>
                   <th>Action</th>
                 </tr>
